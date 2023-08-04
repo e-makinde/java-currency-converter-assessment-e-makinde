@@ -3,7 +3,7 @@ package com.codingblackfemales;
 import java.util.HashMap;
 
 public class CurrenciesGBP implements Currencies {
-    private HashMap<String, Double> exchangeRates;
+    protected HashMap<String, Double> exchangeRates;
 
     public CurrenciesGBP() {
         this.exchangeRates = new HashMap<String, Double>() {
