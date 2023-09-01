@@ -2,16 +2,16 @@ package com.codingblackfemales;
 
 import java.util.HashMap;
 
-public class CurrenciesGBP implements Currencies {
+public class CurrenciesUSD {
     protected HashMap<String, Double> exchangeRates;
 
-    public CurrenciesGBP() {
+    public CurrenciesUSD() {
         this.exchangeRates = new HashMap<String, Double>() {
             {
-                put("GBP", 1.0);
-                put("EUR", 1.16);
-                put("USD", 1.29);
-                put("JPY", 181.78);
+                put("GBP", 0.79);
+                put("EUR", 0.91);
+                put("USD", 1.0);
+                put("JPY", 145.84);
             }
         };
     }
@@ -19,6 +19,4 @@ public class CurrenciesGBP implements Currencies {
     public HashMap<String, Double> getAllExchangeRates() {
         return this.exchangeRates;
     }
-
-    
 }
