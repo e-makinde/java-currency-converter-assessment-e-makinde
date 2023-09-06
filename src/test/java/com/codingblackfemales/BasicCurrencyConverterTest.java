@@ -66,11 +66,9 @@ public class BasicCurrencyConverterTest {
         double amountToConvert = 2.5d;
 
         double expectedResult = (exchangeRates.get(destinationCode) / exchangeRates.get(sourceCode)) * amountToConvert;
-        System.out.println(expectedResult);
 
         double actualResult = basicCurrencyConverter.convertCurrency(sourceCode,
                 destinationCode, amountToConvert);
-        System.out.println(actualResult);
 
         assertTrue(isEqualDoubleValue(expectedResult, actualResult));
     }
@@ -187,6 +185,7 @@ public class BasicCurrencyConverterTest {
         Currencies currencies = new CurrenciesStubEmpty();
         basicCurrencyConverter = new BasicCurrencyConverter(currencies);
         String[] currencyCodes = basicCurrencyConverter.getCurrencyCodes();
+        System.out.println(currencyCodes);
 
         assertTrue(currencyCodes.length == 0);
     }

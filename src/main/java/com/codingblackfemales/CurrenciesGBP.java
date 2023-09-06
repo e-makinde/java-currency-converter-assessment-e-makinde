@@ -12,6 +12,9 @@ public class CurrenciesGBP implements Currencies {
                 put("EUR", 1.16);
                 put("USD", 1.29);
                 put("JPY", 181.78);
+                put("NGN", 1020.26d);
+                put("JMD", 200.13d);
+                put("XCD", 3.49d);
             }
         };
     }
