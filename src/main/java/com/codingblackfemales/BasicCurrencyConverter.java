@@ -13,7 +13,6 @@ public class BasicCurrencyConverter implements CurrencyConverter {
     public BasicCurrencyConverter(Currencies currencies) {
         // Update Currencies object to access required exchange rates
         this.currencies = currencies;
-        
     }
 
 
