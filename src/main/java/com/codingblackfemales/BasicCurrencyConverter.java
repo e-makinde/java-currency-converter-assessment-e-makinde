@@ -15,6 +15,8 @@ public class BasicCurrencyConverter implements CurrencyConverter {
     }
 
     
+
+    
     public String[] getCurrencyCodes(){
         // Fetch keys (currency codes) from exchangeRates hashmap and convert to array.
         String[] currencyCodes = currenciesGBP.exchangeRates.keySet().toArray(new String[0]);
