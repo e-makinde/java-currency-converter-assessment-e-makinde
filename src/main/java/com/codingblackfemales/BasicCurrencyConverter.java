@@ -2,12 +2,13 @@ package com.codingblackfemales;
 
 
 public class BasicCurrencyConverter implements CurrencyConverter {
-    CurrenciesGBP currenciesGBP = new CurrenciesGBP();
+    Currencies currencies = new CurrenciesGBP();
     String[] currencyCodes;
     double conversion;
     
     // Constructor
     public BasicCurrencyConverter(Currencies currencies) {
+        this.currencies = currencies;
         
     }
 
@@ -22,11 +23,8 @@ public class BasicCurrencyConverter implements CurrencyConverter {
     }
 
     public String[] getCurrencyCodes(){ 
-        currencyCodes = currenciesGBP.exchangeRates.keySet().toArray(new String[0]);
+        currencyCodes = currencies.getAllExchangeRates().keySet().toArray(new String[0]);
 
-        if (currencyCodes.length==0) {
-            return String[];
-        }
         return currencyCodes;
     }
 
@@ -41,7 +39,7 @@ public class BasicCurrencyConverter implements CurrencyConverter {
     }
 
     public double getCurrencyExchangeRate(String currencyCode) {
-        Double exchangeRate = currenciesGBP.getAllExchangeRates().get(currencyCode);
+        Double exchangeRate = currencies.getAllExchangeRates().get(currencyCode);
         return exchangeRate == null ? 0:exchangeRate; // ternary operator return 0 for null value. before colon = if cond, after = else cond
     }
 
