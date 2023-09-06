@@ -1,9 +1,9 @@
 package com.codingblackfemales;
 
 public interface CurrencyConverter {
-    double convertCurrency(String sourceCurrencyCode, String destinationCurrencyCode, double amount);
+    public double convertCurrency(String sourceCurrencyCode, String destinationCurrencyCode, double amount);
+    
+    public String[] getCurrencyCodes();
 
-    String[] getCurrencyCodes();
-
-    double getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode);
+    public double getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode);
 }
