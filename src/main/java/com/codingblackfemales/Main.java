@@ -22,16 +22,17 @@ public class Main {
         System.out.println(basicCurrencyConverter.convertCurrency(sourceCurrencyCode, destinationCurrencyCode, amount));
     }
 
-    public static boolean checkValueInArray(String value, String[] array) {
 
+    public static boolean checkValueInArray(String value, String[] array) {
         boolean valueInArray = Arrays.asList(array).contains(value);
         return valueInArray;
-
     }
 
+    // Request and validate user input for currency codes.
     public static String requestUserCurrencyCode(boolean sourceCode) {
         String message1;
-
+        
+        // Select appropriate message for source code and destination code input prompt.
         if (sourceCode == true) {
             message1 = "What currency do you have? ";
         } else {
@@ -39,9 +40,9 @@ public class Main {
         }
 
         System.out.println(message1 + "Press the \"Enter\" key for a list of available currency codes.");
-
         String currencyCode = scanner.nextLine();
 
+        // If the user input is empty or absent in the list of currency codes, print the list of available codes and prompt the user to update their choice until they choose correctly.
         while (currencyCode.toUpperCase() == "" || checkValueInArray(currencyCode.toUpperCase(), currencyCodesArray) == false) {
             System.out.println("Available currencies are " + Arrays.toString(currencyCodesArray));
             System.out.println("Please try again. " + message1);
