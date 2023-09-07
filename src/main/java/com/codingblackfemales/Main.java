@@ -7,8 +7,10 @@ public class Main {
     static Currencies currencies = new CurrenciesGBP();
     static BasicCurrencyConverter basicCurrencyConverter = new BasicCurrencyConverter(currencies);
     static String[] currencyCodesArray = basicCurrencyConverter.getCurrencyCodes();
-    
     static Scanner scanner = new Scanner(System.in);
+
+    
+
     public static void main(String[] args) {
 
         String sourceCurrencyCode = requestUserCurrencyCode(true);
@@ -23,10 +25,13 @@ public class Main {
     }
 
 
+
     public static boolean checkValueInArray(String value, String[] array) {
         boolean valueInArray = Arrays.asList(array).contains(value);
         return valueInArray;
     }
+
+
 
     // Request and validate user input for currency codes.
     public static String requestUserCurrencyCode(boolean sourceCode) {
