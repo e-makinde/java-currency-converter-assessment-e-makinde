@@ -9,7 +9,7 @@ public class Main {
     static String[] currencyCodesArray = basicCurrencyConverter.getCurrencyCodes();
     static Scanner scanner = new Scanner(System.in);
 
-    
+
 
     public static void main(String[] args) {
 
@@ -35,26 +35,25 @@ public class Main {
 
     // Request and validate user input for currency codes.
     public static String requestUserCurrencyCode(boolean sourceCode) {
-        String message1;
-        
-        // Select appropriate message for source code and destination code input prompt.
-        if (sourceCode == true) {
-            message1 = "What currency do you have? ";
-        } else {
-            message1 = "What currency are you converting to? ";
-        }
 
+
+        // Select appropriate message for source code and destination code input prompt.
+        String message1 = (sourceCode == true) ? "What currency do you have? " : "What currency are you converting to? ";
+
+        
         System.out.println(message1 + "Press the \"Enter\" key for a list of available currency codes.");
         String currencyCode = scanner.nextLine();
+        currencyCode = currencyCode.toUpperCase();
 
-        // If the user input is empty or absent in the list of currency codes, print the list of available codes and prompt the user to update their choice until they choose correctly.
-        while (currencyCode.toUpperCase() == "" || checkValueInArray(currencyCode.toUpperCase(), currencyCodesArray) == false) {
+
+        // Validate the users' input. If unacceptable, print the list of available codes and prompt the user to update their choice until they choose correctly.
+        while (currencyCode == "" || checkValueInArray(currencyCode, currencyCodesArray) == false) {
             System.out.println("Available currencies are " + Arrays.toString(currencyCodesArray));
             System.out.println("Please try again. " + message1);
             currencyCode = scanner.nextLine();
+            currencyCode = currencyCode.toUpperCase();
         } 
 
-        currencyCode = currencyCode.toUpperCase();
 
         System.out.println("You have selected " + currencyCode);
         
