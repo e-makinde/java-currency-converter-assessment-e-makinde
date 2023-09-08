@@ -16,12 +16,21 @@ public class Main {
 
         DecimalFormat df = new DecimalFormat("0.00");
 
-        String sourceCurrencyCode = requestUserCurrencyCode(true);
-        String destinationCurrencyCode = requestUserCurrencyCode(false);
+        String confirmConversionCodes;
+        String sourceCurrencyCode;
+        String destinationCurrencyCode;
 
-        System.out.println("You have chosen to convert from " + sourceCurrencyCode + " to " + destinationCurrencyCode + ".");
+        do {
+            sourceCurrencyCode = requestUserCurrencyCode(true);
+            destinationCurrencyCode = requestUserCurrencyCode(false);
 
-        System.out.println("Provide the amount ,in "+ sourceCurrencyCode + ", to be converted to " + destinationCurrencyCode + ".");
+            System.out.println("You have chosen to convert from " + sourceCurrencyCode + " to " + destinationCurrencyCode + ". Is this correct? Press Y to confirm. Press any other key to start again.");
+
+            confirmConversionCodes = (scanner.nextLine()).toUpperCase();
+
+        } while (!confirmConversionCodes.equals("Y"));
+
+        System.out.println("Provide the amount, in "+ sourceCurrencyCode + ", to be converted to " + destinationCurrencyCode + ".");
         double amount = Double.parseDouble(scanner.nextLine());
 
         System.out.println(df.format(basicCurrencyConverter.convertCurrency(sourceCurrencyCode, destinationCurrencyCode, amount)) + destinationCurrencyCode);
