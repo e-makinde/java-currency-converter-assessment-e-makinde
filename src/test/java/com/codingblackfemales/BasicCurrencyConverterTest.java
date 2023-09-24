@@ -185,6 +185,7 @@ public class BasicCurrencyConverterTest {
         Currencies currencies = new CurrenciesStubEmpty();
         basicCurrencyConverter = new BasicCurrencyConverter(currencies);
         String[] currencyCodes = basicCurrencyConverter.getCurrencyCodes();
+        System.out.println(currencyCodes);
 
         assertTrue(currencyCodes.length == 0);
     }
